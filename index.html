@@ -80,6 +80,7 @@
             transition: all 0.3s ease;
             border-bottom: 1px solid transparent;
             padding: 1.5rem 0;
+             background-color: rgba(26, 26, 26, 0.95);
         }
         
         nav.scrolled {
@@ -1526,5 +1527,26 @@
         window.open(`https://wa.me/${tuNumero}?text=${encodeURIComponent(mensaje)}`, '_blank');
     }
 </script>
-
+<script>
+    // Función para desplazamiento suave entre secciones
+function scrollToElement(selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        
+        // Si el menú móvil está abierto, lo cerramos al hacer clic
+        const mobileNav = document.getElementById('mobile-nav');
+        if (mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+        }
+    }
+}
+</script>
+<script>
+    // Lógica para abrir/cerrar el menú en celulares
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileNav.classList.toggle('active');
+});
+</script>
 </body></html>
