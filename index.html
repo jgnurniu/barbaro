@@ -1380,12 +1380,15 @@
                 <div class="footer-section">
                     <h4>¿Dudas?</h4>
                     <p>Escribinos directamente a nuestro WhatsApp para consultas rápidas.</p>
-                    <button class="whatsapp-btn"><a href="https://api.whatsapp.com/send/?phone=%2B543815819588&amp;text&amp;type=phone_number&amp;app_absent=0">💬 Enviar WhatsApp</a></button>
+                    <button class="whatsapp-btn"><a href="https://api.whatsapp.com/send/?phone=%2B543815819588&amp;text&amp;type=phone_number&amp;app_absent=0" 
+   style="color: white !important; text-decoration: none !important;  border-radius: 5px; font-weight: bold; display: inline-block;">
+   💬 Enviar WhatsApp
+</a></button>
                 </div>
 
                 <div class="footer-section">
                     <h4>Ubicación</h4>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.176465250659!2d-65.20942522523347!3d-26.837615890069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0ec6e46049%3A0x2e2ea3ca98c2add6!2sLamadrid%20525%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e1!3m2!1sen!2sar!4v1766095012901!5m2!1sen!2sar" width="100%" height="200" style="border: 0; filter: grayscale(100%);" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.176465250659!2d-65.20942522523347!3d-26.837615890069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0ec6e46049%3A0x2e2ea3ca98c2add6!2sLamadrid%20525%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e1!3m2!1sen!2sar!4v1766095012901!5m2!1sen!2sar" width="100%" height="200" style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1510,10 +1513,12 @@
         // Mensaje limpio, largo y profesional
         const mensaje = 
             `✅ *NUEVA RESERVA DE TURNO*\n` +
+            `━━━━━━━━━━━━━━━━━━━━\n\n` +
             `📌 *Servicio:* ${serviceName}\n` +
             `💈 *Barbero:* ${selectedBarber}\n` +
             `📅 *Fecha:* ${dateStr}\n` +
             `⏰ *Hora:* ${selectedTime}\n\n` +
+            `━━━━━━━━━━━━━━━━━━━━\n` +
             `👤 *Cliente:* ${name}\n\n` +
             `¿Me confirman si el turno está disponible? 🙏`;
 
