@@ -1394,13 +1394,12 @@
         </div>
     </footer>
 <script>
-    // Estado Global
+    // --- ESTADO GLOBAL ---
     let currentMonth = new Date();
-    let selectedDate = new Date(); // Por defecto hoy
+    let selectedDate = new Date(); 
     let selectedTime = '';
     let selectedBarber = '';
 
-    // Listado de barberos para cruzar el ID con el Nombre
     const barbers = [
         { id: "1", name: "Gabi" },
         { id: "2", name: "Leo" },
@@ -1410,55 +1409,96 @@
         { id: "6", name: "Alex" }
     ];
 
-    // --- FUNCIONES DE SELECCIÓN ---
+    // --- AL CARGAR LA PÁGINA ---
+    document.addEventListener('DOMContentLoaded', () => {
+        renderCalendar();
+    });
 
+    // --- SELECCIÓN DE BARBERO ---
     function selectBarber(id, btn) {
         const barber = barbers.find(b => b.id === id);
         selectedBarber = barber ? barber.name : '';
-        
-        // Quitar clase selected de todos y poner al actual
         document.querySelectorAll('.barber-btn').forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
     }
 
+    // --- SELECCIÓN DE HORA ---
     function selectTime(slot, btn) {
         selectedTime = slot;
         document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
     }
 
-    // --- LÓGICA DEL CALENDARIO (Solo si querés que sea dinámico) ---
-    // Si ya tenés los botones de los días en el HTML, esta función se asegura 
-    // de que al hacer clic se guarde la fecha.
-    document.querySelectorAll('.calendar-day').forEach(btn => {
-        btn.addEventListener('click', function() {
-            if(!this.disabled) {
-                const day = this.textContent;
-                selectedDate = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
-                document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
-                this.classList.add('selected');
-            }
+    // --- LÓGICA DEL CALENDARIO DINÁMICO ---
+    function renderCalendar() {
+        const monthDisplay = document.getElementById('calendar-month');
+        const daysContainer = document.getElementById('calendar-days');
+        if (!monthDisplay || !daysContainer) return;
+
+        monthDisplay.textContent = currentMonth.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+        daysContainer.innerHTML = ''; 
+
+        const dayNames = ['Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa', 'Do'];
+        dayNames.forEach(d => {
+            const el = document.createElement('div');
+            el.className = 'calendar-day-header';
+            el.textContent = d;
+            daysContainer.appendChild(el);
         });
-    });
 
-    // --- FUNCIÓN PRINCIPAL: ENVÍO A WHATSAPP ---
+        const firstDay = (new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1).getDay() + 6) % 7;
+        const daysInMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0).getDate();
 
+        for (let i = 0; i < firstDay; i++) {
+            const empty = document.createElement('div');
+            empty.className = 'calendar-day empty';
+            daysContainer.appendChild(empty);
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'calendar-day';
+            btn.textContent = day;
+            
+            const dateObj = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
+            if (dateObj.toDateString() === selectedDate.toDateString()) {
+                btn.classList.add('selected');
+            }
+
+            btn.onclick = () => {
+                selectedDate = new Date(dateObj);
+                renderCalendar();
+            };
+            daysContainer.appendChild(btn);
+        }
+    }
+
+    function previousMonth() {
+        currentMonth.setMonth(currentMonth.getMonth() - 1);
+        renderCalendar();
+    }
+
+    function nextMonth() {
+        currentMonth.setMonth(currentMonth.getMonth() + 1);
+        renderCalendar();
+    }
+
+    // --- ENVÍO A WHATSAPP (SOLO NOMBRE Y DATOS DEL TURNO) ---
     function handleBooking(event) {
         event.preventDefault();
         
-        // Capturamos los campos del formulario
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
+        const nameInput = document.getElementById('name');
         const serviceSelect = document.getElementById('service');
-        const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const name = nameInput ? nameInput.value.trim() : '';
 
-        // Validación de seguridad
-        if (!selectedTime || !selectedBarber || !name || !phone || serviceSelect.value === "") {
-            showToast('⚠️ Por favor, completá todos los campos (Servicio, Barbero, Hora, Nombre y WhatsApp).', true);
+        // Validación: Ahora no pedimos teléfono
+        if (!selectedBarber || !selectedTime || !name || serviceSelect.value === "") {
+            alert('⚠️ Por favor: Seleccioná Barbero, Horario, Servicio y escribí tu Nombre.');
             return;
         }
 
-        // Formatear la fecha para que sea legible
         const dateStr = selectedDate.toLocaleDateString('es-ES', { 
             weekday: 'long', 
             day: 'numeric', 
@@ -1466,47 +1506,19 @@
         });
 
         const tuNumero = "543812096455"; 
-        
-        // Armamos el mensaje limpio (usando saltos de línea \n)
-        const mensajeWhatsApp = `Hola Barbaros! 👋\n\n` +
-                                `*SOLICITO UN NUEVO TURNO:*\n` +
-                                `📌 *Servicio:* ${serviceText}\n` +
-                                `👤 *Cliente:* ${name}\n` +
-                                `💈 *Barbero:* ${selectedBarber}\n` +
-                                `📅 *Día:* ${dateStr}\n` +
-                                `⏰ *Hora:* ${selectedTime}\n` +
-                                `¿Me confirman si hay lugar?`;
 
-        // EL SECRETO: encodeURIComponent elimina los rombos y caracteres raros
-        const urlFinal = `https://wa.me/${tuNumero}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        // Mensaje limpio, largo y profesional
+        const mensaje = 
+            `✅ *NUEVA RESERVA DE TURNO*\n` +
+            `📌 *Servicio:* ${serviceName}\n` +
+            `💈 *Barbero:* ${selectedBarber}\n` +
+            `📅 *Fecha:* ${dateStr}\n` +
+            `⏰ *Hora:* ${selectedTime}\n\n` +
+            `👤 *Cliente:* ${name}\n\n` +
+            `¿Me confirman si el turno está disponible? 🙏`;
 
-        // Abrir en pestaña nueva
-        window.open(urlFinal, '_blank');
-
-        showToast(`✅ ¡Redirigiendo a WhatsApp!`);
-        
-        // Opcional: limpiar el formulario después de enviar
-        // event.target.reset();
-    }
-
-    // Función para mostrar avisos en pantalla (Toast)
-    function showToast(message, isError = false) {
-        const toast = document.createElement('div');
-        toast.className = `toast ${isError ? 'error' : ''}`;
-        toast.style.position = 'fixed';
-        toast.style.bottom = '20px';
-        toast.style.right = '20px';
-        toast.style.padding = '1rem 2rem';
-        toast.style.background = isError ? '#ff4444' : '#d4af37';
-        toast.style.color = 'white';
-        toast.style.borderRadius = '5px';
-        toast.style.zIndex = '9999';
-        toast.textContent = message;
-        document.body.appendChild(toast);
-
-        setTimeout(() => {
-            toast.remove();
-        }, 4000);
+        // Abrir WhatsApp con el texto codificado correctamente
+        window.open(`https://wa.me/${tuNumero}?text=${encodeURIComponent(mensaje)}`, '_blank');
     }
 </script>
 
