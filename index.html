@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <meta property="og:title" content="Barbaros - Tu imagen habla por vos" />
-    <meta property="og:description" content="Barbería premium. Cortes clásicos, barba y experiencias de lujo." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@barbaros" />
-    <meta name="twitter:title" content="Barbaros - Tu imagen habla por vos" />
-    <meta name="twitter:description" content="Barbería premium. Cortes clásicos, barba y experiencias de lujo." />
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta property="og:title" content="Barbaros - Tu imagen habla por vos">
+    <meta property="og:description" content="Barbería premium. Cortes clásicos, barba y experiencias de lujo.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@barbaros">
+    <meta name="twitter:title" content="Barbaros - Tu imagen habla por vos">
+    <meta name="twitter:description" content="Barbería premium. Cortes clásicos, barba y experiencias de lujo.">
     <title>Barbaros - Tu imagen habla por vos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Oswald:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -473,6 +471,98 @@
             color: #000;
         }
         
+        /* Team Section */
+        #team {
+            padding: 6rem 0;
+            background-color: var(--bg);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 640px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1400px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+           
+        .team-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .team-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .team-card-image {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            overflow: hidden;
+            background-color: var(--secondary);
+        }
+        
+        .team-card-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+            filter: grayscale(0%);
+        }
+        
+        .team-card:hover .team-card-image img {
+            transform: scale(1.05);
+        }
+        
+        .team-card-content {
+            padding: 2rem 1rem;
+        }
+        
+        .team-card-name {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .team-card-specialty {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .team-card-description {
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-style: italic;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
         /* Booking */
         #booking {
             padding: 6rem 0;
@@ -794,15 +884,137 @@
             color: white;
         }
     </style>
-</head>
+<!-- Code injected by Five-server -->
+  <script async="" data-id="five-server" data-file="d:\.vscode\index.html" type="application/javascript" src="/fiveserver.js"></script>
+  <style>      
+      /* Injected by five-server */
+      /*[data-highlight="true"] {
+        border: 1px rgb(90,170,255) solid !important;
+        background-color: rgba(155,215,255,0.5);
+        animation: fadeOutHighlight 1s forwards 0.5s;
+      }
+      img[data-highlight="true"] {
+        filter: sepia(100%) hue-rotate(180deg) saturate(200%);
+        animation: fadeOutHighlightIMG 0.5s forwards 0.5s;
+      }*/
+      @keyframes fadeOutHighlight {
+        from {background-color: rgba(155,215,255,0.5);}
+        to {background-color: rgba(155,215,255,0);}
+      }      
+      @keyframes fadeOutHighlightIMG {
+        0% {filter: sepia(100%) hue-rotate(180deg) saturate(200%);}
+        33% {filter: sepia(66%) hue-rotate(180deg) saturate(100%);}
+        50% {filter: sepia(50%) hue-rotate(90deg) saturate(50%);}
+        66% {filter: sepia(33%) hue-rotate(0deg) saturate(100%);}
+        100% {filter: sepia(0%) hue-rotate(0deg) saturate(100%);}
+      }
+      @keyframes fiveserverInfoPopup {
+        0%   {top:-40px;}
+        15%  {top:4px;}
+        85%  {top:4px;}
+        100% {top:-40px;}
+      }
+      /*smaller*/
+      @media (max-width: 640px) {
+        #fiveserver-info-wrapper {
+          max-width: 98%;
+        }
+        #fiveserver-info {
+          border-radius: 0px;
+        }      
+      }
+
+      </style><!-- Code injected by Five-server -->
+  <script async="" data-id="five-server" data-file="d:\.vscode\index.html" type="application/javascript" src="/fiveserver.js"></script>
+  <style>      
+      /* Injected by five-server */
+      /*[data-highlight="true"] {
+        border: 1px rgb(90,170,255) solid !important;
+        background-color: rgba(155,215,255,0.5);
+        animation: fadeOutHighlight 1s forwards 0.5s;
+      }
+      img[data-highlight="true"] {
+        filter: sepia(100%) hue-rotate(180deg) saturate(200%);
+        animation: fadeOutHighlightIMG 0.5s forwards 0.5s;
+      }*/
+      @keyframes fadeOutHighlight {
+        from {background-color: rgba(155,215,255,0.5);}
+        to {background-color: rgba(155,215,255,0);}
+      }      
+      @keyframes fadeOutHighlightIMG {
+        0% {filter: sepia(100%) hue-rotate(180deg) saturate(200%);}
+        33% {filter: sepia(66%) hue-rotate(180deg) saturate(100%);}
+        50% {filter: sepia(50%) hue-rotate(90deg) saturate(50%);}
+        66% {filter: sepia(33%) hue-rotate(0deg) saturate(100%);}
+        100% {filter: sepia(0%) hue-rotate(0deg) saturate(100%);}
+      }
+      @keyframes fiveserverInfoPopup {
+        0%   {top:-40px;}
+        15%  {top:4px;}
+        85%  {top:4px;}
+        100% {top:-40px;}
+      }
+      /*smaller*/
+      @media (max-width: 640px) {
+        #fiveserver-info-wrapper {
+          max-width: 98%;
+        }
+        #fiveserver-info {
+          border-radius: 0px;
+        }      
+      }
+
+      </style><style>      
+      /* Injected by five-server */
+      /*[data-highlight="true"] {
+        border: 1px rgb(90,170,255) solid !important;
+        background-color: rgba(155,215,255,0.5);
+        animation: fadeOutHighlight 1s forwards 0.5s;
+      }
+      img[data-highlight="true"] {
+        filter: sepia(100%) hue-rotate(180deg) saturate(200%);
+        animation: fadeOutHighlightIMG 0.5s forwards 0.5s;
+      }*/
+      @keyframes fadeOutHighlight {
+        from {background-color: rgba(155,215,255,0.5);}
+        to {background-color: rgba(155,215,255,0);}
+      }      
+      @keyframes fadeOutHighlightIMG {
+        0% {filter: sepia(100%) hue-rotate(180deg) saturate(200%);}
+        33% {filter: sepia(66%) hue-rotate(180deg) saturate(100%);}
+        50% {filter: sepia(50%) hue-rotate(90deg) saturate(50%);}
+        66% {filter: sepia(33%) hue-rotate(0deg) saturate(100%);}
+        100% {filter: sepia(0%) hue-rotate(0deg) saturate(100%);}
+      }
+      @keyframes fiveserverInfoPopup {
+        0%   {top:-40px;}
+        15%  {top:4px;}
+        85%  {top:4px;}
+        100% {top:-40px;}
+      }
+      /*smaller*/
+      @media (max-width: 640px) {
+        #fiveserver-info-wrapper {
+          max-width: 98%;
+        }
+        #fiveserver-info {
+          border-radius: 0px;
+        }      
+      }
+
+      </style></head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="navbar" class="">
         <div class="container">
             <div class="logo">Barbaros</div>
             <ul id="nav-menu">
                 <li><a href="#hero" class="nav-link">Inicio</a></li>
                 <li><a href="#services" class="nav-link">Servicios</a></li>
+
+<li>
+<a href="#team" class="nav-link">Equipo</a>
+</li>
                 <li><a href="#gallery" class="nav-link">Galería</a></li>
                 <li><a href="#contact" class="nav-link">Contacto</a></li>
                 <li><button class="btn-primary" onclick="scrollToElement('#booking')" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Agendar Cita</button></li>
@@ -821,7 +1033,7 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-bg">
-            <img src="https://github.com/jgnurniu/barbaro/blob/main/barber8.jpg?raw=true" alt="Barbershop" />
+            <img src="https://github.com/jgnurniu/barbaro/blob/main/barber8.jpg?raw=true" alt="Barbershop">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-gradient"></div>
@@ -829,7 +1041,7 @@
             <div class="hero-content">
                 <span class="hero-subtitle">Hola Amigos</span>
                 <h1 class="hero-title">
-                    TU IMAGEN <br />
+                    TU IMAGEN <br>
                     <span>HABLA POR VOS</span>
                 </h1>
                 <p class="hero-description">
@@ -852,11 +1064,141 @@
                     Elegí el servicio que mejor se adapte a tu estilo. Todos nuestros servicios incluyen una consulta personalizada.
                 </p>
             </div>
-            <div class="services-grid" id="services-grid"></div>
+            <div class="services-grid" id="services-grid">
+                <div class="service-card ">
+                    <div class="service-card-image">
+                        
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/corte2.jpg?raw=true" alt="Corte Clásico">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-header">
+                            <h3 class="service-card-title">Corte Clásico</h3>
+                            <span class="service-card-price">$13.000</span>
+                        </div>
+                        <p class="service-card-description">Corte de cabello a tijera o máquina, lavado y peinado.</p>
+                        <ul class="service-features">
+                            <li>Asesoramiento de imagen</li><li>Lavado premium</li><li>Peinado con producto</li>
+                        </ul>
+                        <button onclick="scrollToElement('#booking')">Reservar</button>
+                    </div>
+                </div>
+            
+                <div class="service-card ">
+                    <div class="service-card-image">
+                        
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/barba1.jpg?raw=true" alt="Barba y Piel">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-header">
+                            <h3 class="service-card-title">Barba y Piel</h3>
+                            <span class="service-card-price">$8000</span>
+                        </div>
+                        <p class="service-card-description">Perfilado de barba con navaja, toalla caliente y exfoliación.</p>
+                        <ul class="service-features">
+                            <li>Toalla caliente</li><li>Perfilado con navaja</li><li>Hidratación facial</li>
+                        </ul>
+                        <button onclick="scrollToElement('#booking')">Reservar</button>
+                    </div>
+                </div>
+            
+                <div class="service-card popular">
+                    <div class="service-card-image">
+                        <div class="popular-badge">POPULAR</div>
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/exofilacion1.jpg?raw=true" alt="Corte y exfoliacion">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-header">
+                            <h3 class="service-card-title">Corte y exfoliacion</h3>
+                            <span class="service-card-price">$17.000</span>
+                        </div>
+                        <p class="service-card-description">La experiencia definitiva. Corte, barba y tratamiento facial.</p>
+                        <ul class="service-features">
+                            <li>Corte y Barba</li><li>Bebida de cortesía</li>
+                        </ul>
+                        <button onclick="scrollToElement('#booking')">Reservar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Booking Section -->
+    <section id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro <span>Equipo</span></h2>
+                <p class="section-description">Conocé a los barberos que harán tu transformación. Cada uno trae su expertise y pasión.</p>
+            </div>
+            <div class="team-grid" id="team-grid">
+                <div class="team-card">
+                    <div class="team-card-image">
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/gabi2.jpg?raw=true" alt="Gabi">
+                    </div>
+                    <div class="team-card-content">
+                        <h3 class="team-card-name">Gabi</h3>
+                        <p class="team-card-specialty">Máquina De Dar Chamba</p>
+                        <p class="team-card-description">"BARBERO MARATONISTA: TODA LA ENERGÍA EN UN SOLO DÍA (VIERNES)"</p>
+                    </div>
+                </div>
+            
+                <div class="team-card">
+                    <div class="team-card-image">
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/leo.jpg?raw=true" alt="Leo">
+                    </div>
+                    <div class="team-card-content">
+                        <h3 class="team-card-name">Leo</h3>
+                        <p class="team-card-specialty">Máquina De Dar Chamba</p>
+                        <p class="team-card-description">"ES TAN DETALLISTA QUE, SI TE VE EN LA CALLE, TE CHEQUEA EL FLEQUILLO"</p>
+                    </div>
+                </div>
+            
+                <div class="team-card">
+                    <div class="team-card-image">
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/ulises1.jpeg?raw=true" alt="Ulises">
+                    </div>
+                    <div class="team-card-content">
+                        <h3 class="team-card-name">Ulises</h3>
+                        <p class="team-card-specialty">Mate En Mano, Tijera En Acción</p>
+                        <p class="team-card-description">"TARDA MÁS EN LLEGAR QUE EN TERMINAR EL CORTE"</p>
+                    </div>
+                </div>
+            
+                <div class="team-card">
+                    <div class="team-card-image">
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/agustin1.jpeg?raw=true" alt="Agustín">
+                    </div>
+                    <div class="team-card-content">
+                        <h3 class="team-card-name">Agustín</h3>
+                        <p class="team-card-specialty">Un Porteño En Tucuman</p>
+                        <p class="team-card-description">"AQUÍ NO SUENA SPOTIFY, SUENA ÉL. <br>CORTE + SHOW"</p>
+                    </div>
+                </div>
+            
+                <div class="team-card">
+                    <div class="team-card-image">
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/cristian.jpg?raw=true" alt="Cristian">
+                    </div>
+                    <div class="team-card-content">
+                        <h3 class="team-card-name">Cristian</h3>
+                        <p class="team-card-specialty">Siempre Puntual A La Salida</p>
+                        <p class="team-card-description">"EL TIEMPO QUE PIERDE, LO COMPENSA CON BUENOS CORTES"</p>
+                    </div>
+                </div>
+            
+                <div class="team-card">
+                    <div class="team-card-image">
+                        <img src="https://github.com/jgnurniu/barbaro/blob/main/alex.jpg?raw=true" alt="Alex">
+                    </div>
+                    <div class="team-card-content">
+                        <h3 class="team-card-name">Alex</h3>
+                        <p class="team-card-specialty">Hora De Cierre Birra En Mano</p>
+                        <p class="team-card-description">"SU TIJERA ES RÁPIDA, PERO SU LENGUA MÁS"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Booking Section -->
     <section id="booking">
         <div class="container">
             <div class="booking-content">
@@ -868,10 +1210,10 @@
                     <div class="calendar-wrapper">
                         <div class="calendar-header">
                             <button onclick="previousMonth()">←</button>
-                            <span id="calendar-month" style="font-weight: 700;"></span>
+                            <span id="calendar-month" style="font-weight: 700;">diciembre de 2025</span>
                             <button onclick="nextMonth()">→</button>
                         </div>
-                        <div class="calendar-days" id="calendar-days"></div>
+                        <div class="calendar-days" id="calendar-days"><div class="calendar-day-header">Lu</div><div class="calendar-day-header">Ma</div><div class="calendar-day-header">Mi</div><div class="calendar-day-header">Ju</div><div class="calendar-day-header">Vi</div><div class="calendar-day-header">Sa</div><div class="calendar-day-header">Do</div><button class="calendar-day" disabled="" style="opacity: 0.3;"></button><button type="button" class="calendar-day">1</button><button type="button" class="calendar-day">2</button><button type="button" class="calendar-day">3</button><button type="button" class="calendar-day">4</button><button type="button" class="calendar-day">5</button><button type="button" class="calendar-day">6</button><button type="button" class="calendar-day">7</button><button type="button" class="calendar-day">8</button><button type="button" class="calendar-day">9</button><button type="button" class="calendar-day">10</button><button type="button" class="calendar-day">11</button><button type="button" class="calendar-day">12</button><button type="button" class="calendar-day">13</button><button type="button" class="calendar-day">14</button><button type="button" class="calendar-day">15</button><button type="button" class="calendar-day">16</button><button type="button" class="calendar-day">17</button><button type="button" class="calendar-day">18</button><button type="button" class="calendar-day">19</button><button type="button" class="calendar-day">20</button><button type="button" class="calendar-day">21</button><button type="button" class="calendar-day selected">22</button><button type="button" class="calendar-day">23</button><button type="button" class="calendar-day">24</button><button type="button" class="calendar-day">25</button><button type="button" class="calendar-day">26</button><button type="button" class="calendar-day">27</button><button type="button" class="calendar-day">28</button><button type="button" class="calendar-day">29</button><button type="button" class="calendar-day">30</button><button type="button" class="calendar-day">31</button></div>
                     </div>
                 </div>
 
@@ -888,22 +1230,89 @@
 
                     <div class="form-group">
                         <label>Barbero</label>
-                        <div class="button-group" id="barber-group"></div>
+                        <div class="button-group" id="barber-group">
+                <button type="button" class="barber-btn" onclick="selectBarber('1', this)">
+                    Gabi
+                </button>
+            
+                <button type="button" class="barber-btn" onclick="selectBarber('2', this)">
+                    Leo
+                </button>
+            
+                <button type="button" class="barber-btn" onclick="selectBarber('3', this)">
+                    Ulises
+                </button>
+            
+                <button type="button" class="barber-btn" onclick="selectBarber('4', this)">
+                    Agustin
+                </button>
+            
+                <button type="button" class="barber-btn" onclick="selectBarber('5', this)">
+                    Cristian
+                </button>
+            
+                <button type="button" class="barber-btn" onclick="selectBarber('6', this)">
+                    Alex
+                </button>
+            </div>
                     </div>
 
                     <div class="form-group">
                         <label>Horario Disponible</label>
-                        <div class="button-group time-group" id="time-group"></div>
+                        <div class="button-group time-group" id="time-group">
+    <button type="button" class="time-slot" onclick="selectTime('09:00', this)">
+                    09:00
+                </button>
+                <button type="button" class="time-slot" onclick="selectTime('10:00', this)">
+                    10:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('11:00', this)">
+                    11:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('12:00', this)">
+                    12:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('13:00', this)">
+                    13:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('14:00', this)">
+                    14:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('15:00', this)">
+                    15:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('16:00', this)">
+                    16:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('17:00', this)">
+                    17:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('18:00', this)">
+                    18:00
+                </button>
+            
+                <button type="button" class="time-slot" onclick="selectTime('19:00', this)">
+                    19:00
+                </button>
+            </div>
                     </div>
 
                     <div class="form-group">
                         <label for="name">Tu Nombre</label>
-                        <input id="name" type="text" placeholder="Ej: Juan Pérez" />
+                        <input id="name" type="text" placeholder="Ej: Juan Pérez">
                     </div>
 
                     <div class="form-group">
                         <label for="phone">WhatsApp</label>
-                        <input id="phone" type="tel" placeholder="Ej: 11 1234 5678" />
+                        <input id="phone" type="tel" placeholder="Ej: 11 1234 5678">
                     </div>
 
                     <button type="submit" class="btn-primary" style="width: 100%;">Confirmar Turno</button>
@@ -920,7 +1329,27 @@
                 <h2>Galería de <span>Resultados</span></h2>
                 <p class="section-description">Nuestro trabajo habla por nosotros.</p>
             </div>
-            <div class="gallery-grid" id="gallery-grid"></div>
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://github.com/jgnurniu/barbaro/blob/main/corte5.jpg?raw=true" alt="Gallery 1">
+                    <div class="gallery-overlay"></div>
+                </div>
+            
+                <div class="gallery-item">
+                    <img src="https://github.com/jgnurniu/barbaro/blob/main/corte4.jpg?raw=true" alt="Gallery 2">
+                    <div class="gallery-overlay"></div>
+                </div>
+            
+                <div class="gallery-item">
+                    <img src="https://github.com/jgnurniu/barbaro/blob/main/corte3.jpg?raw=true" alt="Gallery 3">
+                    <div class="gallery-overlay"></div>
+                </div>
+            
+                <div class="gallery-item">
+                    <img src="https://github.com/jgnurniu/barbaro/blob/main/corte5.jpg?raw=true" alt="Gallery 4">
+                    <div class="gallery-overlay"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -956,19 +1385,12 @@
                 <div class="footer-section">
                     <h4>¿Dudas?</h4>
                     <p>Escribinos directamente a nuestro WhatsApp para consultas rápidas.</p>
-                    <button class="whatsapp-btn"><a href="https://api.whatsapp.com/send/?phone=%2B543815819588&text&type=phone_number&app_absent=0">💬 Enviar WhatsApp</a></button>
+                    <button class="whatsapp-btn"><a href="https://api.whatsapp.com/send/?phone=%2B543815819588&amp;text&amp;type=phone_number&amp;app_absent=0">💬 Enviar WhatsApp</a></button>
                 </div>
 
                 <div class="footer-section">
                     <h4>Ubicación</h4>
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.176465250659!2d-65.20942522523347!3d-26.837615890069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0ec6e46049%3A0x2e2ea3ca98c2add6!2sLamadrid%20525%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e1!3m2!1sen!2sar!4v1766095012901!5m2!1sen!2sar" 
-                        width="100%" 
-                        height="200" 
-                        style="border: 0; filter: grayscale(100%);" 
-                        allowfullscreen="" 
-                        loading="lazy"
-                    ></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.176465250659!2d-65.20942522523347!3d-26.837615890069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0ec6e46049%3A0x2e2ea3ca98c2add6!2sLamadrid%20525%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e1!3m2!1sen!2sar!4v1766095012901!5m2!1sen!2sar" width="100%" height="200" style="border: 0; filter: grayscale(100%);" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -976,266 +1398,122 @@
             </div>
         </div>
     </footer>
+<script>
+    // Estado Global
+    let currentMonth = new Date();
+    let selectedDate = new Date(); // Por defecto hoy
+    let selectedTime = '';
+    let selectedBarber = '';
 
-    <script>
-        // Global state
-        let currentMonth = new Date();
-        let selectedDate = new Date();
-        let selectedTime = '';
-        let selectedBarber = '';
+    // Listado de barberos para cruzar el ID con el Nombre
+    const barbers = [
+        { id: "1", name: "Gabi" },
+        { id: "2", name: "Leo" },
+        { id: "3", name: "Ulises" },
+        { id: "4", name: "Agustin" },
+        { id: "5", name: "Cristian" },
+        { id: "6", name: "Alex" }
+    ];
 
-        // Data
-        const services = [
-            {
-                id: "cut",
-                title: "Corte Clásico",
-                price: "$13.000",
-                image: "https://github.com/jgnurniu/barbaro/blob/main/corte2.jpg?raw=true",
-                description: "Corte de cabello a tijera o máquina, lavado y peinado.",
-                features: ["Asesoramiento de imagen", "Lavado premium", "Peinado con producto"],
-            },
-            {
-                id: "beard",
-                title: "Barba y Piel",
-                price: "$8000",
-                image: "https://github.com/jgnurniu/barbaro/blob/main/barba1.jpg?raw=true",
-                description: "Perfilado de barba con navaja, toalla caliente y exfoliación.",
-                features: ["Toalla caliente", "Perfilado con navaja", "Hidratación facial"],
-            },
-            {
-                id: "combo",
-               title: "Corte y exfoliacion",
-                price: "$17.000",
-                image: "https://github.com/jgnurniu/barbaro/blob/main/exofilacion1.jpg?raw=true",
-                description: "La experiencia definitiva. Corte, barba y tratamiento facial.",
-                features: ["Corte y Barba", "Bebida de cortesía"],
-                popular: true,
-            },
-              
-        ];
+    // --- FUNCIONES DE SELECCIÓN ---
 
-        const timeSlots = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
-        const barbers = [
-            { id: "1", name: "Gabi" },
-            { id: "2", name: "Leo" },
-            { id: "3", name: "Ulises" },
-            { id: "4", name: "Agustin" },
-            { id: "5", name: "Cristian" },
-            { id: "6", name: "Alex" }
-        ];
+    function selectBarber(id, btn) {
+        const barber = barbers.find(b => b.id === id);
+        selectedBarber = barber ? barber.name : '';
+        
+        // Quitar clase selected de todos y poner al actual
+        document.querySelectorAll('.barber-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+    }
 
-        const galleryImages = [
-            "https://github.com/jgnurniu/barbaro/blob/main/corte5.jpg?raw=true",
-            "https://github.com/jgnurniu/barbaro/blob/main/corte4.jpg?raw=true",
-            "https://github.com/jgnurniu/barbaro/blob/main/corte3.jpg?raw=true",
-            "https://github.com/jgnurniu/barbaro/blob/main/corte5.jpg?raw=true"
-        ];
+    function selectTime(slot, btn) {
+        selectedTime = slot;
+        document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+    }
 
-        // Initialize
-        function init() {
-            renderServices();
-            renderBarbers();
-            renderTimeSlots();
-            renderCalendar();
-            renderGallery();
-            setupNavigation();
-        }
-
-        // Services
-        function renderServices() {
-            const grid = document.getElementById('services-grid');
-            grid.innerHTML = services.map(service => `
-                <div class="service-card ${service.popular ? 'popular' : ''}">
-                    <div class="service-card-image">
-                        ${service.popular ? '<div class="popular-badge">POPULAR</div>' : ''}
-                        <img src="${service.image}" alt="${service.title}" />
-                    </div>
-                    <div class="service-card-content">
-                        <div class="service-card-header">
-                            <h3 class="service-card-title">${service.title}</h3>
-                            <span class="service-card-price">${service.price}</span>
-                        </div>
-                        <p class="service-card-description">${service.description}</p>
-                        <ul class="service-features">
-                            ${service.features.map(f => `<li>${f}</li>`).join('')}
-                        </ul>
-                        <button onclick="scrollToElement('#booking')">Reservar</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Barbers
-        function renderBarbers() {
-            const group = document.getElementById('barber-group');
-            group.innerHTML = barbers.map(b => `
-                <button type="button" class="barber-btn" onclick="selectBarber('${b.id}', this)">
-                    ${b.name}
-                </button>
-            `).join('');
-        }
-
-        function selectBarber(id, btn) {
-            selectedBarber = id;
-            document.querySelectorAll('.barber-btn').forEach(b => b.classList.remove('selected'));
-            btn.classList.add('selected');
-        }
-
-        // Time slots
-        function renderTimeSlots() {
-            const group = document.getElementById('time-group');
-            group.innerHTML = timeSlots.map(slot => `
-                <button type="button" class="time-slot" onclick="selectTime('${slot}', this)">
-                    ${slot}
-                </button>
-            `).join('');
-        }
-
-        function selectTime(slot, btn) {
-            selectedTime = slot;
-            document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
-            btn.classList.add('selected');
-        }
-
-        // Calendar
-        function renderCalendar() {
-            const monthName = currentMonth.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
-            document.getElementById('calendar-month').textContent = monthName;
-
-            const daysInMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0).getDate();
-            const firstDay = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1).getDay();
-            
-            const daysContainer = document.getElementById('calendar-days');
-            daysContainer.innerHTML = '';
-
-            const dayNames = ['Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa', 'Do'];
-            dayNames.forEach(day => {
-                const header = document.createElement('div');
-                header.className = 'calendar-day-header';
-                header.textContent = day;
-                daysContainer.appendChild(header);
-            });
-
-            for (let i = 0; i < firstDay; i++) {
-                const empty = document.createElement('button');
-                empty.className = 'calendar-day';
-                empty.disabled = true;
-                empty.style.opacity = '0.3';
-                daysContainer.appendChild(empty);
+    // --- LÓGICA DEL CALENDARIO (Solo si querés que sea dinámico) ---
+    // Si ya tenés los botones de los días en el HTML, esta función se asegura 
+    // de que al hacer clic se guarde la fecha.
+    document.querySelectorAll('.calendar-day').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if(!this.disabled) {
+                const day = this.textContent;
+                selectedDate = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
+                document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+                this.classList.add('selected');
             }
+        });
+    });
 
-            const today = new Date();
-            for (let day = 1; day <= daysInMonth; day++) {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'calendar-day';
-                btn.textContent = day;
-                
-                const dateObj = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
-                if (dateObj.toDateString() === selectedDate.toDateString()) {
-                    btn.classList.add('selected');
-                }
+    // --- FUNCIÓN PRINCIPAL: ENVÍO A WHATSAPP ---
 
-                btn.onclick = () => selectDate(dateObj);
-                daysContainer.appendChild(btn);
-            }
+    function handleBooking(event) {
+        event.preventDefault();
+        
+        // Capturamos los campos del formulario
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const serviceSelect = document.getElementById('service');
+        const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
+
+        // Validación de seguridad
+        if (!selectedTime || !selectedBarber || !name || !phone || serviceSelect.value === "") {
+            showToast('⚠️ Por favor, completá todos los campos (Servicio, Barbero, Hora, Nombre y WhatsApp).', true);
+            return;
         }
 
-        function selectDate(date) {
-            selectedDate = new Date(date);
-            renderCalendar();
-        }
+        // Formatear la fecha para que sea legible
+        const dateStr = selectedDate.toLocaleDateString('es-ES', { 
+            weekday: 'long', 
+            day: 'numeric', 
+            month: 'long' 
+        });
 
-        function previousMonth() {
-            currentMonth.setMonth(currentMonth.getMonth() - 1);
-            renderCalendar();
-        }
+        const tuNumero = "543812096455"; 
+        
+        // Armamos el mensaje limpio (usando saltos de línea \n)
+        const mensajeWhatsApp = `Hola Barbaros! 👋\n\n` +
+                                `*SOLICITO UN NUEVO TURNO:*\n` +
+                                `📌 *Servicio:* ${serviceText}\n` +
+                                `👤 *Cliente:* ${name}\n` +
+                                `💈 *Barbero:* ${selectedBarber}\n` +
+                                `📅 *Día:* ${dateStr}\n` +
+                                `⏰ *Hora:* ${selectedTime}\n` +
+                                `📱 *WhatsApp:* ${phone}\n` +
+                                `¿Me confirman si hay lugar?`;
 
-        function nextMonth() {
-            currentMonth.setMonth(currentMonth.getMonth() + 1);
-            renderCalendar();
-        }
+        // EL SECRETO: encodeURIComponent elimina los rombos y caracteres raros
+        const urlFinal = `https://wa.me/${tuNumero}?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
-        // Gallery
-        function renderGallery() {
-            const grid = document.getElementById('gallery-grid');
-            grid.innerHTML = galleryImages.map((img, idx) => `
-                <div class="gallery-item">
-                    <img src="${img}" alt="Gallery ${idx + 1}" />
-                    <div class="gallery-overlay"></div>
-                </div>
-            `).join('');
-        }
+        // Abrir en pestaña nueva
+        window.open(urlFinal, '_blank');
 
-        // Form submission
-        function handleBooking(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
+        showToast(`✅ ¡Redirigiendo a WhatsApp!`);
+        
+        // Opcional: limpiar el formulario después de enviar
+        // event.target.reset();
+    }
 
-            if (!selectedDate || !selectedTime || !selectedBarber || !name || !phone || !service) {
-                showToast('Por favor completá todos los campos para agendar.', true);
-                return;
-            }
+    // Función para mostrar avisos en pantalla (Toast)
+    function showToast(message, isError = false) {
+        const toast = document.createElement('div');
+        toast.className = `toast ${isError ? 'error' : ''}`;
+        toast.style.position = 'fixed';
+        toast.style.bottom = '20px';
+        toast.style.right = '20px';
+        toast.style.padding = '1rem 2rem';
+        toast.style.background = isError ? '#ff4444' : '#d4af37';
+        toast.style.color = 'white';
+        toast.style.borderRadius = '5px';
+        toast.style.zIndex = '9999';
+        toast.textContent = message;
+        document.body.appendChild(toast);
 
-            const dateStr = selectedDate.toLocaleDateString('es-ES', { weekday: 'long', month: 'long', day: 'numeric' });
-            const barberName = barbers.find(b => b.id === selectedBarber)?.name;
-            showToast(`¡Solicitud enviada! Turno para ${dateStr} a las ${selectedTime} con ${barberName}. Te contactaremos pronto.`);
-
-            document.getElementById('name').value = '';
-            document.getElementById('phone').value = '';
-            document.getElementById('service').value = '';
-        }
-
-        // Toast
-        function showToast(message, isError = false) {
-            const toast = document.createElement('div');
-            toast.className = `toast ${isError ? 'error' : ''}`;
-            toast.textContent = message;
-            document.body.appendChild(toast);
-
-            setTimeout(() => {
-                toast.remove();
-            }, 3000);
-        }
-
-        // Navigation
-        function setupNavigation() {
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileNav = document.getElementById('mobile-nav');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const navbar = document.getElementById('navbar');
-
-            menuToggle.addEventListener('click', () => {
-                mobileNav.classList.toggle('active');
-            });
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileNav.classList.remove('active');
-                });
-            });
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-        }
-
-        function scrollToElement(selector) {
-            const element = document.querySelector(selector);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Start
-        document.addEventListener('DOMContentLoaded', init);
-    
+        setTimeout(() => {
+            toast.remove();
+        }, 4000);
+    }
 </script>
-        </body>
-        </html>
+
+</body></html>
